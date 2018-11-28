@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+$( document ).ready(function() {
+  
+  $( "#clickintro, .up" ).click(function() {
+    $('html, body').animate({
+      scrollTop:$('#intro').offset().top - 48
+    }, 'slow');
+  });
+  
+  $( "#clickmedium" ).click(function() {
+    $('html, body').animate({
+      scrollTop:$('#medium').offset().top - 48
+    }, 'slow');
+  });
+  
+  $( "#clickoutro" ).click(function() {
+    $('html, body').animate({
+      scrollTop:$('#outro').offset().top - 48
+    }, 'slow');
+  });
+
+
+  // Bouton up apparaît au scroll, lorsqu'il dépasse de 48px
+  $( window ).scroll(function() {
+    if($(window).scrollTop() > 48) {
+      $(".up").fadeIn('fast', function(){
+      });
+    } 
+    else {
+      $(".up").fadeOut('fast', function(){
+      });
+    }
+  });
+  
+});
+</script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+
+  <!-- My Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Viga" rel="stylesheet">
+
+  <!-- My css -->
+  <link rel="stylesheet" href="style.css">
+  <title>Travel</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" id="">
+    <div class="container">
+      <a class="navbar-brand" href="#clickintro">DarkTravel</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link active" href="#" id="section4">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="#section1" id="scroll">Pricing</a>
+          <a class="nav-item nav-link" href="#section2" id="scroll">Features</a>
+          <a class="nav-item nav-link" href="#section3" id="scroll">About</a>
+          <a class="nav-item btn btn-primary tombol" href="#">Join Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Akhir navbar -->
+
+  <!-- Jumbotron -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">If you’re not a risk <span>taker</span>, you should <br> get the hell <span>out</span> of
+        business</h1>
+      <a href="" class="btn btn-primary tombol">Our Work</a>
+    </div>
+  </div>
+  <!-- Akhir Jumbotron -->
+
+  <!-- COntainer -->
+  <div class="container">
+
+    <!-- info panel -->
+    <div class="row justify-content-center">
+      <div class="col-10 info-panel" id="section1">
+        <div class="row">
+          <div class="col-lg">
+            <img src="img/employee.png" alt="" class="float-left">
+            <h4>24 Hours</h4>
+            <p></p>
+          </div>
+          <div class="col-lg">
+            <img src="img/hires.png" alt="" class="float-left">
+            <h4>24 Hours</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="col-lg">
+            <img src="img/security.png" alt="" class="float-left">
+            <h4>24 Hours</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Akhir info panel -->
+
+    <!-- Workingspace -->
+    <div class="row workingspace" id="section2">
+      <div class="col-lg-5">
+        <img src="img/workingspace.png" alt="" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h3>You <span>work</span> like at <span>home</span></h3>
+        <p>Bekerja dengan suasana hati yang lebih asik dan mempelajari hal baru setiap harinya.</p>
+        <a href="" class="btn btn-primary tombol">Gallery</a>
+      </div>
+    </div>
+    <!-- AKhir workingspace -->
+
+    <!-- Testimonial -->
+    <section class="testimonial">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h5>"Bekerjalah dengan suasana hati yang lebih asik dan mempelajari hal baru setiap harinya. "</h5>
+        </div>
+      </div>
+
+      <div class="row justify-content-center" id="section3">
+        <div class="col-6 justify-content-center d-flex">
+          <figure class="figure">
+            <img src="img/img1.png" class="figure-img img-fluid rounded-circle" alt="Testi 1">
+          </figure>
+          <figure class="figure">
+            <img src="img/img2.png" class="figure-img img-fluid rounded-circle utama" alt="Testi 2">
+            <figcaption class="figure-caption">
+              <h5>Ardikha Kuswahyudi</h5>
+              <p>Enterpreuner</p>
+            </figcaption>
+          </figure>
+          <figure class="figure">
+            <img src="img/img3.png" class="figure-img img-fluid rounded-circle terakhir" alt="Testi 3">
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- AKhir Testimonial -->
+  </div>
+  <!-- AKhir Container -->
+  <nav class="up">
+    <a href="#section4">UP</a>
+  </nav>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+
+  <!-- jquery -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+</body>
+
+</html>
