@@ -1,0 +1,8 @@
+<?php
+abstract class Clown{
+	static function bar($name){
+		echo "abstract class $name";
+	}
+}
+$fld = "Kerang";
+Clown::bar($fld);
