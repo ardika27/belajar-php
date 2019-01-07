@@ -8,7 +8,11 @@ abstract class Mobil {
 
 	public function start()
 	{
+<<<<<<< HEAD
 		$this->setStatus(self::START);
+=======
+ 	   $this->setStatus(self::START);
+>>>>>>> 71d1511d398ae73b54db6f920b78d5aa1ab04ddb
 	}
 
 	public function run(){
@@ -41,6 +45,7 @@ class Xenia extends Mobil {
 $class = new Xenia;
 $class->start();
 echo $class->getStatus(), PHP_EOL;
+<<<<<<< HEAD
 $class->run();
 echo $class->getStatus(), PHP_EOL;
 $class->shutdown();
@@ -49,3 +54,5 @@ $class->stop();
 echo $class->getStatus(), PHP_EOL;
 $class->shutdown();
 echo $class->getStatus(), PHP_EOL;
+=======
+>>>>>>> 71d1511d398ae73b54db6f920b78d5aa1ab04ddb
