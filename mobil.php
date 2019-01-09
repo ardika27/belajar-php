@@ -28,7 +28,7 @@ abstract class Mobil {
            if ($this->getStatus() === self::RUN) {
 	       $this->setStatus(self::STOP);
 	   } else {
-               throw new Exception('Engine not ran yet');
+               throw new Exception('Engine not run yet');
 	   }
 	}
 
@@ -52,28 +52,61 @@ abstract class Mobil {
 
 	public function flipMirror()
 	{
+		
 	}
 }
 
 class Xenia extends Mobil {
+   
 
+
+   public function trans($transmission="Matic")
+  {
+  	echo "transmission $this->transmission=$transmission".PHP_EOL;
+  	
+  }
+  public function bahanbakar($fuel="Pertamax")
+  {
+  	echo "Bahan Bakar $this->fuel=$fuel".PHP_EOL;
+  }
 }
+
 
 class Avanza extends Mobil {
 
+	public function trans($transmission="Manual")
+  {
+  	echo "transmission $this->transmission=$transmission".PHP_EOL;
+  	
+  }
+  public function bahanbakar($fuel="Pertalite")
+  {
+  	echo "Bahan Bakar $this->fuel=$fuel".PHP_EOL;
+  }
 }
 
 class Innova extends Mobil {
+
+	public function trans($transmission="Manual")
+  {
+  	echo "transmission $this->transmission=$transmission".PHP_EOL;
+  	
+  }
+  public function bahanbakar($fuel="Dextalite")
+  {
+  	echo "Bahan Bakar $this->fuel=$fuel".PHP_EOL;
+  }
+  public function flipMirror(){}
 
 }
 
 
 $xenia = new Xenia;
 
-$xenia->flipMirror()
+//$xenia->flipMirror();
 
 $xenia->start();
-//$xenia->run();
-//$xenia->stop();
-$xenia->shutdown();
+$xenia->trans();
+$xenia->flipMirror();
+
 echo $xenia->getStatus(), PHP_EOL;
