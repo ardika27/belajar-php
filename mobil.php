@@ -2,14 +2,15 @@
 abstract class Mobil {
 	protected $status = 0;
 
-        protected $transmission; 
+	protected $transmission; 
 
-        protected $fuel; 
+	protected $fuel; 
 
 	public const SHUTDOWN = 0;
 	public const START = 1;
 	public const RUN   = 2;
 	public const STOP  = 3;
+	public const MIRROR = 4;
 
 	public function start()
 	{
@@ -45,15 +46,23 @@ abstract class Mobil {
 	   $this->status = $param;
 	}
 
-	function getStatus() : int
+ 	public function getStatus() : int
         {
 		return $this->status;
 	}
-
-	public function flipMirror()
-	{
-		
+	public function flipMirror(int $x){
+		if($x == self::MIRROR){
+			throw new Exception("Sub Zero");
+			return $x;
+		}
+		try{
+                       flipMirror(4);
+                }
+                catch(Exception $e){
+                        echo "Mirror Cant Open",$e->getMessage(),"\n";
+                }
 	}
+		
 }
 
 class Xenia extends Mobil {
@@ -69,6 +78,7 @@ class Xenia extends Mobil {
   {
   	echo "Bahan Bakar $this->fuel=$fuel".PHP_EOL;
   }
+	  
 }
 
 
@@ -96,17 +106,13 @@ class Innova extends Mobil {
   {
   	echo "Bahan Bakar $this->fuel=$fuel".PHP_EOL;
   }
-  public function flipMirror(){}
+  public function flipMirror($x = 1){
+  }
 
 }
 
 
-$xenia = new Xenia;
+$xenia = new Innova;
+echo $xenia->flipMirror().PHP_EOL;
+echo $xenia->getStatus();
 
-//$xenia->flipMirror();
-
-$xenia->start();
-$xenia->trans();
-$xenia->flipMirror();
-
-echo $xenia->getStatus(), PHP_EOL;
